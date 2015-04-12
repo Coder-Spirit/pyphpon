@@ -12,7 +12,7 @@ composer.json file the following text:
 ```json
 {
     "require": {
-        "litipk/pyphpon": "0.1"
+        "litipk/pyphpon": "0.2"
     }
 }
 ```
@@ -83,6 +83,18 @@ $new_greet_instance();
 ```
 
 It's important to note that we aren't binding the `greet` function to the object (since this violates the intended attributes protection, you can use reflection if you need to do it), but trying to uniformize and making more clean the PHP syntax.
+
+## Using traits is also possible
+
+If you don't want to inherit from the `PyPhpOn` class, then you can use the trait version (this trait works gracefully with inherited `__call` and `__get` methods, this won't break the "magic" bultin in your classes):
+```php
+class Example
+{
+    use PyPhpOnTrait;
+    
+    // ... Whatever you need.
+}
+```
 
 ## How to contribute
 
