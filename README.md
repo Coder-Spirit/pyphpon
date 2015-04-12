@@ -12,7 +12,7 @@ composer.json file the following text:
 ```json
 {
     "require": {
-        "litipk/pyphpon": "dev-master"
+        "litipk/pyphpon": "0.1"
     }
 }
 ```
@@ -82,7 +82,7 @@ $new_greet_instance = $peter->greet;
 $new_greet_instance();
 ```
 
-It's important to note that we aren't binding the `greet` function to the object (since this violates the intended properties protection, you can use reflection if you need to to it), but trying to uniformize and making more clean the PHP syntax.
+It's important to note that we aren't binding the `greet` function to the object (since this violates the intended attributes protection, you can use reflection if you need to do it), but trying to uniformize and making more clean the PHP syntax.
 
 ## How to contribute
 
