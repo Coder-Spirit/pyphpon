@@ -1,6 +1,7 @@
 {
     "name": "litipk/pyphpon",
     "description": "A port of nice Python features to PHP.",
+    "keywords": ["reflection", "magic", "python", "syntactic sugar"],
     "require-dev": {
         "phpunit/phpunit": "4.5.*"
     },
