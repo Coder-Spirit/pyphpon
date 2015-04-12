@@ -18,7 +18,7 @@ class PyPhpOn_Class_Get_Test extends PyPhpOnTestCase
     }
 
     /**
-     * @dataProvider objectsProvider
+     * @dataProvider objectsWithInheritanceProvider
      * @expectedException \ErrorException
      */
     public function testGetClassNotCallablePrivateProperty($a)
@@ -40,7 +40,7 @@ class PyPhpOn_Class_Get_Test extends PyPhpOnTestCase
     }
 
     /**
-     * @dataProvider objectsProvider
+     * @dataProvider objectsWithInheritanceProvider
      * @expectedException \ErrorException
      */
     public function testGetClassCallablePrivateProperty($a)
@@ -49,7 +49,7 @@ class PyPhpOn_Class_Get_Test extends PyPhpOnTestCase
     }
 
     /**
-     * @dataProvider objectsProvider
+     * @dataProvider objectsWithInheritanceProvider
      * @expectedException \ErrorException
      */
     public function testGetPropertyThatDoesNotExist($a)

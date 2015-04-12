@@ -10,7 +10,7 @@ date_default_timezone_set('UTC');
 class PyPhpOn_Object_Call_Test extends PyPhpOnTestCase
 {
     /**
-     * @dataProvider objectsProvider
+     * @dataProvider objectsWithInheritanceProvider
      * @expectedException \ErrorException
      */
     public function testCallObjectAttachedNotCallableProperty($a)

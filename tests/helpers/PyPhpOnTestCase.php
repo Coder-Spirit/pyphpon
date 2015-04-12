@@ -27,7 +27,18 @@ class PyPhpOnTestCase extends \PHPUnit_Framework_TestCase
     {
         return [
             [new ExtendedPyPhpOn()],
-            [new ExtendedFastPyPhpOn()]
+            [new ExtendedFastPyPhpOn()],
+            [new PyPhpOnAsTrait()],
+            [new PyPhpOnAsTraitPlusInheritance()]
+        ];
+    }
+
+    public function objectsWithInheritanceProvider()
+    {
+        return [
+            [new ExtendedPyPhpOn()],
+            [new ExtendedFastPyPhpOn()],
+            [new PyPhpOnAsTrait()]
         ];
     }
 }
