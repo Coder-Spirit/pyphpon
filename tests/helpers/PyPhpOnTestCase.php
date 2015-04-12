@@ -2,7 +2,6 @@
 
 namespace Litipk\PyPhpOn\Tests;
 
-
 date_default_timezone_set('UTC');
 
 
@@ -22,5 +21,13 @@ class PyPhpOnTestCase extends \PHPUnit_Framework_TestCase
     public function tearDown()
     {
         set_error_handler(null);
+    }
+
+    public function objectsProvider()
+    {
+        return [
+            [new ExtendedPyPhpOn()],
+            [new ExtendedFastPyPhpOn()]
+        ];
     }
 }

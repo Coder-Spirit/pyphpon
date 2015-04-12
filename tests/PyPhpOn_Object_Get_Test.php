@@ -1,7 +1,6 @@
 <?php
 
 
-use Litipk\PyPhpOn\Tests\ExtendedPyPhpOn as ExtendedPyPhpOn;
 use Litipk\PyPhpOn\Tests\PyPhpOnTestCase as PyPhpOnTestCase;
 
 
@@ -10,16 +9,20 @@ date_default_timezone_set('UTC');
 
 class PyPhpOn_Object_Get_Test extends PyPhpOnTestCase
 {
-    public function testGetObjectAttachedNotCallableProperty()
+    /**
+     * @dataProvider objectsProvider
+     */
+    public function testGetObjectAttachedNotCallableProperty($a)
     {
-        $a = new ExtendedPyPhpOn();
         $a->attached_property = 34;
         $this->assertEquals($a->attached_property, 34);
     }
 
-    public function testGetObjectAttachedCallableProperty()
+    /**
+     * @dataProvider objectsProvider
+     */
+    public function testGetObjectAttachedCallableProperty($a)
     {
-        $a = new ExtendedPyPhpOn();
         $a->square = function($x) { return $x*$x; };
 
         $square_function = $a->square;
