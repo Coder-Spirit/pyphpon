@@ -16,6 +16,11 @@ class MagicClass
     {
         return "Unable to call the $method method with \$args = ".json_encode($args);
     }
+
+    public function __isset($name)
+    {
+        return (preg_match("/^existent([a-zA-Z])+$/", $name) === 1);
+    }
 }
 
 class PyPhpOnAsTraitPlusInheritance extends MagicClass

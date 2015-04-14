@@ -45,4 +45,12 @@ abstract class PyPhpOn
         $line = $trace[0]['line'];
         trigger_error("Undefined property: $class::$name in $file on line $line", E_USER_NOTICE);
     }
+
+    public function __isset($name)
+    {
+        return (
+            $this->getReflectionThis()->hasMethod($name) &&
+            $this->getReflectionThis()->getMethod($name)->isPublic()
+        );
+    }
 }

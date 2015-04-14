@@ -10,6 +10,11 @@ class ExtendedFastPyPhpOn extends FastPyPhpOn
     public $public_property = 1;
     private $private_property = 2;
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function publicFunction ($arg)
     {
         return [

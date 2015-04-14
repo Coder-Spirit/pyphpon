@@ -69,4 +69,30 @@ trait PyPhpOnTrait
         $line = $trace[0]['line'];
         trigger_error("Undefined property: $class::$name in $file on line $line", E_USER_NOTICE);
     }
+
+    public function __isset($name)
+    {
+        $reflectedThis = $this->getReflectionThis();
+
+        if (
+            $reflectedThis->hasMethod($name) &&
+            $reflectedThis->getMethod($name)->isPublic()
+        ) {
+            return true;
+        }
+
+        $reflectedParentClass = $reflectedThis->getParentClass();
+        if (
+            $reflectedParentClass != false &&
+            $reflectedParentClass->hasMethod("__isset")
+        ) {
+            $reflectedInheritedMagicGet = $reflectedParentClass->getMethod("__isset");
+
+            if ($reflectedInheritedMagicGet->isPublic()) {
+                return $reflectedInheritedMagicGet->invoke($this, $name);
+            }
+        }
+
+        return false;
+    }
 }
