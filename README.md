@@ -12,7 +12,7 @@ composer.json file the following text:
 ```json
 {
     "require": {
-        "litipk/pyphpon": "0.2"
+        "litipk/pyphpon": "0.3"
     }
 }
 ```
